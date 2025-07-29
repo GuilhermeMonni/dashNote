@@ -1,0 +1,93 @@
+:root {
+  --cor-fundo: #1e1e2f;
+  --cor-primaria: #2c2c3f;
+  --cor-coluna: #35354a;
+  --cor-texto: #e2e2e2;
+  --cor-titulo: #95f5c5;
+  --cor-destaque: #67e8f9;
+  --borda: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  color: var(--cor-destaque);
+  font-size: 2.2rem;
+}
+
+.kanban {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.coluna {
+  background-color: var(--cor-coluna);
+  border-radius: var(--borda);
+  padding: 1rem;
+  width: 100%;
+  max-width: 300px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.coluna h2 {
+  color: var(--cor-titulo);
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.coluna ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.coluna li {
+  background-color: var(--cor-primaria);
+  padding: 0.75rem;
+  border-radius: var(--borda);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+.coluna li:hover {
+  transform: scale(1.02);
+  cursor: grab;
+}
+
+.calendario {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: var(--cor-coluna);
+  padding: 1rem;
+  border-radius: var(--borda);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: var(--cor-titulo);
+  font-size: 1rem;
+}

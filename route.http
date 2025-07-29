@@ -1,0 +1,10 @@
+POST https://dashnote.onrender.com/login
+Content-Type: application/json
+
+{
+    "username": "GUILHerme",
+    "password": "12345"
+}
+
+###
+POST https://dashnote.onrender.com/logout

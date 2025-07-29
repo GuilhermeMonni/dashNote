@@ -1,0 +1,16 @@
+{
+  "name": "dashnote-desktop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "electron ."
+  },
+  "keywords": [],
+  "author": "Guilherme Monni",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "electron": "^37.2.3",
+    "electron-reload": "^2.0.0-alpha.1"
+  }
+}
