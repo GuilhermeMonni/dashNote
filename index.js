@@ -16,7 +16,7 @@ const createLoginWindow = () => {
         height: 600,
         resizable: false,
         webPreferences: {
-            preload: path.join(__dirname, './preload.js')
+            preload: path.join(__dirname, 'scripts/preload.js')
         }
     })
 
@@ -31,7 +31,7 @@ const createCadastroWindow = () => {
         height: 600,
         resizable: false,
         webPreferences: {
-            preload: path.join(__dirname, 'preload.js')
+            preload: path.join(__dirname, 'scripts/preload.js')
         }
     })
 
@@ -46,7 +46,7 @@ const createHomeWindow = () => {
         height: 600,
         resizable: false,
         webPreferences: {
-            preload: path.join(__dirname, 'preload.js')
+            preload: path.join(__dirname, 'scripts/preload.js')
         }
     })
 
