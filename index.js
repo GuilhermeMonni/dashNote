@@ -10,7 +10,7 @@ let cadastroWindow
 let homeWindow
 
 const createLoginWindow = () => {
-    //criar a janela de login
+    //janela de login
     loginWindow = new BrowserWindow({
         width: 1000,
         height: 600,
@@ -20,12 +20,12 @@ const createLoginWindow = () => {
         }
     })
 
-   // loginWindow.setMenu(null)
+    //loginWindow.setMenu(null)
     loginWindow.loadFile('index.html')
 }
 
 const createCadastroWindow = () => {
-    //criar janela de cadastro
+    //janela de cadastro
     cadastroWindow = new BrowserWindow({
         width: 1000,
         height: 600,
@@ -40,7 +40,7 @@ const createCadastroWindow = () => {
 }
 
 const createHomeWindow = () => {
-    //criar janela de cadastro
+    //janela da home 
     homeWindow = new BrowserWindow({
         width: 1000,
         height: 600,
