@@ -2,6 +2,7 @@
   "name": "dashnote-desktop",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "electron ."
   },
@@ -12,5 +13,8 @@
   "devDependencies": {
     "electron": "^37.2.3",
     "electron-reload": "^2.0.0-alpha.1"
+  },
+  "dependencies": {
+    "electron-store": "^10.1.0"
   }
 }
