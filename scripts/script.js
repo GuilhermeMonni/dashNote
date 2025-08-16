@@ -1,4 +1,4 @@
-import Store from 'electron/store'
+import { Store } from './electron/store'
 
 const store = new Store()
 const form = document.querySelector('#formContainer') //formulario
@@ -40,7 +40,7 @@ async function execLogin(e){ //função para executar login
         
         const data = await response.json()
         store.set('token', data.token)
-        
+
     }catch(error){
         console.error('Erro ao fazer o login!', error)
         alert("Usuário ou senha incorreta!")
@@ -49,3 +49,4 @@ async function execLogin(e){ //função para executar login
         }, 2000)
     } 
 }
+

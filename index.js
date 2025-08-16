@@ -1,8 +1,16 @@
-const {app, BrowserWindow, ipcMain} = require('electron')
-const path = require('path')
+import {app, BrowserWindow, ipcMain} from 'electron'
+import { fileURLToPath } from 'url'
+import path from 'path'
+import { createRequire } from 'module'
 
-require('electron-reload')(__dirname, {
-  electron: require(`${__dirname}/node_modules/electron`)
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+const require = createRequire(import.meta.url)
+const electronReload = require('electron-reload')
+
+electronReload(__dirname, {
+  electron: require(path.join(__dirname, 'node_modules', 'electron'))
 })
 
 let loginWindow
@@ -16,7 +24,7 @@ const createLoginWindow = () => {
         height: 600,
         resizable: false,
         webPreferences: {
-            preload: path.join(__dirname, 'scripts/preload.js')
+            preload: path.join(__dirname, 'scripts/preload.cjs')
         }
     })
 
@@ -31,7 +39,7 @@ const createCadastroWindow = () => {
         height: 600,
         resizable: false,
         webPreferences: {
-            preload: path.join(__dirname, 'scripts/preload.js')
+            preload: path.join(__dirname, 'scripts/preload.cjs')
         }
     })
 
@@ -46,7 +54,7 @@ const createHomeWindow = () => {
         height: 600,
         resizable: false,
         webPreferences: {
-            preload: path.join(__dirname, 'scripts/preload.js')
+            preload: path.join(__dirname, 'scripts/preload.cjs')
         }
     })
 

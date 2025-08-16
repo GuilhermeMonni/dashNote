@@ -1,6 +1,9 @@
+const token = store.get('token')
+
 fetch('https://dashnote.onrender.com/me', { 
-    method: 'GET',
-    credentials: 'include'
+    headers:{
+        Authorization: `Bearer ${token}`
+    }
 })
 .then(res => { //validacao user 
     console.log(res)
