@@ -1,4 +1,6 @@
-const token = store.get('token')
+const token = localStorage.getItem('token')
+
+if(!token){window.location.href = './login.html'}
 
 fetch('https://dashnote.onrender.com/me', { 
     headers:{

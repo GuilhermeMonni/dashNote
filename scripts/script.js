@@ -1,7 +1,5 @@
-import { Store } from './electron/store'
-
-const store = new Store()
 const form = document.querySelector('#formContainer') //formulario
+let token
 
 //eventos para verificar login
 form.addEventListener('submit', execLogin)
@@ -27,26 +25,31 @@ async function execLogin(e){ //função para executar login
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ //infos json para login
+            body: JSON.stringify({
                 username,
                 password
             })
         })
 
-        const result = await response.json()
-        console.log('Resposta servidor:', result)
-        
-        window.location.href = './home.html'
-        
-        const data = await response.json()
-        store.set('token', data.token)
+        // Verifica a resposta
+        if (!response.ok) {
+            throw new Error(`Erro HTTP: ${response.status}`)
+        }
 
-    }catch(error){
-        console.error('Erro ao fazer o login!', error)
-        alert("Usuário ou senha incorreta!")
+        const data = await response.json()
+        console.log('Resposta do servidor:', data)
+
+        // Salva token e redireciona
+        localStorage.setItem('token', data.token)
+        window.location.href = './home.html'
+
+    } catch (error) {
+        console.error('Erro ao fazer o login!')
+        alert("Usuário ou senha incorretos!")
         setTimeout(() => {
             location.reload()
         }, 2000)
-    } 
+        return
+    }
 }
 
