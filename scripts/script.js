@@ -12,7 +12,7 @@ form.addEventListener('keyup', (e) => {
 async function execLogin(e){ //função para executar login
     e.preventDefault()
 
-    console.log("verificando os dados inseridos...")
+    console.log("Verificando os dados inseridos...")
 
     const dados = new FormData(form) //dados do formulario
     const username = dados.get('username')
@@ -39,8 +39,11 @@ async function execLogin(e){ //função para executar login
         const data = await response.json()
         console.log('Resposta do servidor:', data)
 
-        // Salva token e redireciona
+        // Salva infos do user e redireciona
         localStorage.setItem('token', data.token)
+        localStorage.setItem('username', data.username)
+        localStorage.setItem('id', data.id)
+
         window.location.href = './home.html'
 
     } catch (error) {
