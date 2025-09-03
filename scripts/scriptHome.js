@@ -37,7 +37,32 @@ async function searchTasks(username, id){ //buscar tasks do user
     }
 
     const data = await response.json()
-    console.log(data)
+    console.log(data.message) //msg boas vindas
 
-    //A FAZER: organizar tasks recebidas (err 500)
+    //organizar tasks recebidas
+    const tasksArray = Array.from(data.tasksArray) //tasks user
+
+    let working = []
+    let finish = []
+    let open = []
+
+    tasksArray.forEach((e) => {
+        //tasks a fazer
+        if(e.state == 'open'){
+            open.push(e.tasks, e.date)
+            return
+        }
+        //tasks em andamento
+        if(e.state == 'working'){
+            working.push(e.tasks, e.date)
+            return
+        }
+        //tasks concluidas
+        if(e.state == 'finish'){
+            finish.push(e.tasks, e.date)
+            return
+        }
+    })
+
+    console.log(open, working, finish)
 }
