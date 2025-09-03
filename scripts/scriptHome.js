@@ -42,27 +42,37 @@ async function searchTasks(username, id){ //buscar tasks do user
     //organizar tasks recebidas
     const tasksArray = Array.from(data.tasksArray) //tasks user
 
-    let working = []
-    let finish = []
-    let open = []
+    const taskOpen = document.querySelector('#task-open') //ul tasks abertas
+    const taskWorking = document.querySelector('#task-working') //ul tasks em andamento
+    const taskFinish = document.querySelector('#task-finish') //ul tasks finalizadas
 
     tasksArray.forEach((e) => {
         //tasks a fazer
         if(e.state == 'open'){
-            open.push(e.tasks, e.date)
+            const task = document.createElement('li')
+            task.classList.add('task-li') //element li task
+            task.textContent = e.tasks
+
+            taskOpen.appendChild(task) //add element list
             return
         }
         //tasks em andamento
         if(e.state == 'working'){
-            working.push(e.tasks, e.date)
+            const task = document.createElement('li')
+            task.classList.add('task-li')
+            task.textContent = e.tasks
+
+            taskWorking.appendChild(task)
             return
         }
         //tasks concluidas
         if(e.state == 'finish'){
-            finish.push(e.tasks, e.date)
+            const task = document.createElement('li')
+            task.classList.add('task-li') //element li task
+            task.textContent = e.tasks
+
+            taskFinish.appendChild(task) //add element list
             return
         }
     })
-
-    console.log(open, working, finish)
 }
