@@ -1,10 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&display=swap');
+
 :root {
-  --cor-fundo: #1e1e2f;
-  --cor-primaria: #2c2c3f;
-  --cor-coluna: #35354a;
-  --cor-texto: #e2e2e2;
-  --cor-titulo: #95f5c5;
-  --cor-destaque: #67e8f9;
+  --cor-fundo: #121212;
+  --cor-container: #1A1A1A;
+  --cor-texto: #E0E0E0;
+  --cor-borda: #53ffb2af;
+  --cor-verde-hover: #00cc6a;
+  --cor-input-borda: #2A2A2A;
+  --cor-borda-suave: #1F1F1F;
+  --cor-link: #8f8f8f;
+  --cor-botao-texto: #121212;
   --borda: 8px;
 }
 
@@ -16,7 +22,6 @@
 
 body {
   background-color: var(--cor-fundo);
-  color: var(--cor-texto);
   font-family: 'Segoe UI', sans-serif;
   min-height: 100vh;
   display: flex;
@@ -30,31 +35,38 @@ header {
 }
 
 header h1 {
-  color: var(--cor-destaque);
-  font-size: 2.2rem;
+  font-family: "Archivo Narrow", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--cor-texto); 
+  margin: 0 0 0.5rem 0;
 }
 
 .kanban {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   justify-content: space-around;
   flex: 1;
   flex-wrap: wrap;
 }
 
 .coluna {
-  background-color: var(--cor-coluna);
+  background-color: var(--cor-container);
   border-radius: var(--borda);
+  box-shadow: 1px 1px 10px -9px var(--cor-borda);
   padding: 1rem;
   width: 100%;
   max-width: 300px;
   min-height: 300px;
+  max-height: 500px;
   display: flex;
   flex-direction: column;
+  animation: animation .5s ease-in-out;
 }
 
 .coluna h2 {
-  color: var(--cor-titulo);
+  color: var(--cor-texto);
   margin-bottom: 1rem;
   font-size: 1.4rem;
 }
@@ -67,27 +79,26 @@ header h1 {
 }
 
 .coluna li {
-  background-color: var(--cor-primaria);
+  background-color: var(--cor-container);
+  color: var(--cor-texto);
   padding: 0.75rem;
   border-radius: var(--borda);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 8px -8px var(--cor-borda);
   transition: transform 0.2s;
 }
 
 .coluna li:hover {
   transform: scale(1.02);
-  cursor: grab;
+  cursor: pointer;
 }
 
-.calendario {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  background-color: var(--cor-coluna);
-  padding: 1rem;
-  border-radius: var(--borda);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  color: var(--cor-titulo);
-  font-size: 1rem;
+@keyframes animation{
+  from{
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

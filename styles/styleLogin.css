@@ -1,23 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
 :root {
   --cor-fundo: #121212;
-  --cor-fundo-caixa: #1A1A1A;
+  --cor-container: #1A1A1A;
   --cor-texto: #E0E0E0;
-  --cor-verde: #53ffb2af;
+  --cor-borda: #53ffb2af;
   --cor-verde-hover: #00cc6a;
   --cor-input-borda: #2A2A2A;
   --cor-borda-suave: #1F1F1F;
   --cor-link: #8f8f8f;
   --cor-botao-texto: #121212;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 body {
@@ -30,11 +30,11 @@ body {
 
 /* Container do formulário */
 .container {
-    background-color: var(--cor-fundo-caixa);
+    background-color: var(--cor-container);
     margin: 80px auto auto;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 1px 1px 10px -3px var(--cor-verde);
+    box-shadow: 1px 1px 10px -6px var(--cor-borda);
     width: 100%;
     max-width: 400px;
     text-align: center;
@@ -47,7 +47,7 @@ h1 {
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
-    color: var(--cor-texto); /* Cinza escuro */
+    color: var(--cor-texto); 
     margin: 0 0 0.5rem 0;
 }
 
@@ -91,11 +91,11 @@ button {
     width: 100%;
     padding: 14px;
     background: linear-gradient(90deg, #2cca83, #24b374);
-    color: white;
+    color: #fff;
     border: none;
     border-radius: 8px;
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 500;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
     margin-top: 1rem; /* Espaço acima do botão */
@@ -103,7 +103,9 @@ button {
 
 /* Efeito ao passar o mouse sobre o botão */
 button:hover {
-    transform: translateY(-2px); /* Leve elevação */
+    transform: translateY(-2px); 
+    color: #fff;
+    font-weight: 530;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 

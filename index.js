@@ -20,9 +20,8 @@ let homeWindow
 const createLoginWindow = () => {
     //janela de login
     loginWindow = new BrowserWindow({
-        width: 1000,
-        height: 600,
-        resizable: false,
+        width: 1100,
+        height: 700,
         webPreferences: {
             preload: path.join(__dirname, 'scripts/preload.cjs')
         }
