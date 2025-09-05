@@ -13,7 +13,7 @@
   --cor-borda-suave: #1F1F1F;
   --cor-link: #8f8f8f;
   --cor-botao-texto: #121212;
-  --cor-txt-alternative: #07a156;
+  --cor-alternative: #07a156;
   --borda: 8px;
 }
 
@@ -66,7 +66,7 @@ header h1 {
   bottom: 1px;
   right: 5px;
   text-decoration: none;
-  color: var(--cor-txt-alternative);
+  color: var(--cor-alternative);
   cursor: pointer;
 }
 
