@@ -11,6 +11,7 @@
   --cor-borda-suave: #1F1F1F;
   --cor-link: #8f8f8f;
   --cor-botao-texto: #121212;
+  --cor-txt-alternative: #07a156;
   --borda: 8px;
 }
 
@@ -43,10 +44,46 @@ header h1 {
   margin: 0 0 0.5rem 0;
 }
 
+.card-profile{
+  background-color: var(--cor-container);
+  padding: 1%;
+  width: 12%;
+  min-width: 150px;
+  height: 10vh;
+  margin: 10px 0;
+  border-radius: var(--borda);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.card-profile a{
+  font-size: 0.9em;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 100;
+  position: absolute;
+  bottom: 1px;
+  right: 5px;
+  text-decoration: none;
+  color: var(--cor-txt-alternative);
+}
+
+#username-card{
+  margin: 0 2%;
+  font-size: 1em;
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--cor-texto);
+  font-weight: 400;
+}
+
+.card-profile img{
+  width: 20%;
+  margin-right: 10%;
+}
+
 .kanban {
   display: flex;
-  gap: 0.5rem;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 5%;
   flex: 1;
   flex-wrap: wrap;
 }
@@ -56,8 +93,9 @@ header h1 {
   border-radius: var(--borda);
   box-shadow: 1px 1px 10px -9px var(--cor-borda);
   padding: 1rem;
+  margin: 2%;
   width: 100%;
-  max-width: 300px;
+  max-width: 350px;
   min-height: 300px;
   max-height: 500px;
   display: flex;
