@@ -13,5 +13,8 @@
   "devDependencies": {
     "electron": "^37.2.3",
     "electron-reload": "^2.0.0-alpha.1"
+  },
+  "dependencies": {
+    "@flaticon/flaticon-uicons": "^3.3.1"
   }
 }

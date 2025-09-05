@@ -44,7 +44,6 @@ header h1 {
   color: var(--cor-texto); 
   margin: 0 0 0.5rem 0;
 }
-
 .card-profile{
   background-color: var(--cor-container);
   padding: 1%;
@@ -104,6 +103,12 @@ header h1 {
   display: flex;
   flex-direction: column;
   animation: animation .5s ease-in-out;
+}
+
+#addTask{
+  background-color: transparent;
+  border: none;
+  color: var(--cor-alternative);
 }
 
 .coluna h2 {

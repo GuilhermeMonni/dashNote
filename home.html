@@ -4,23 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DashNote</title>
-  <link rel="stylesheet" href="styles/styleHome.css" />
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+  <link rel="stylesheet" href="styles/styleHome.css">
   <script src="scripts/scriptHome.js" defer></script>
   <script src="scripts/scriptProfile.js" defer></script>
 </head>
 <body>
   <header>
     <h1>📌 Minhas Tarefas</h1>
-    <div class="card-profile">
-      <img src="imgs/user-icon.png" alt="Imagem usuário">
-      <p id="username-card"></p>
-      <a onclick="logout()">Sair</a>
-    </div>
+      <div class="card-profile">
+        <i class="fi fi-sr-user"></i>
+        <p id="username-card"></p>
+        <a onclick="logout()">Sair</a>
+      </div>
   </header>
 
   <main class="kanban">
     <section class="coluna">
       <h2>📥 A Fazer</h2>
+      <button id="addTask">
+      </button>
       <ul id="task-open">
         
       </ul>
