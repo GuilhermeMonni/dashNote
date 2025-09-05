@@ -20,6 +20,7 @@ async function logout(){
         console.error("Falha na requisição de logout:", error)
     }
     finally{
-        return window.location.href = './index.html'
+        localStorage.clear()
+        window.location.href = './index.html'
     }
 }
