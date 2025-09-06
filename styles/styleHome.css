@@ -93,8 +93,8 @@ header h1 {
   margin: 0 2%;
   width: 100%;
   max-width: 350px;
-  min-height: 300px;
-  max-height: 500px;
+  min-height: 500px;
+  max-height: 550px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -144,6 +144,30 @@ header h1 {
 .coluna li:hover {
   transform: scale(1.02);
   cursor: pointer;
+}
+
+footer{
+  background: transparent;
+  color: var(--cor-texto);
+  width: 100%;
+  height: 5vh;
+  margin: 20% 0 0;
+  position: relative;
+}
+footer img{
+  width: 4%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.infos-footer{
+  width: 50%;
+  display: flex;
+  font-size: 0.8em;
+  position: absolute;
+  bottom: 0;
+  left: 4%;
+  gap: 3%;
 }
 
 @keyframes animation{
