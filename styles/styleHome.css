@@ -105,13 +105,18 @@ header h1 {
   background-color: transparent;
   border: none;
   color: var(--cor-alternative);
-  width: 40%;
+  width: 7%;
   padding: 1%;
   font-size: 1.5em; 
   font-family: 'Segoe UI', sans-serif;
   position: absolute;
   top: 3%;
-  left: 70%;
+  left: 86%;
+  cursor: pointer;
+}
+#addTask:hover{
+  scale: 1.02;
+  color: var(--cor-verde-hover);
 }
 
 .coluna h2 {
