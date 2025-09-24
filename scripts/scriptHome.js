@@ -1,5 +1,4 @@
 const token = localStorage.getItem('token') //token user
-
 const username = localStorage.getItem('username') //username 
 const id = localStorage.getItem('id') //id do user 
 
@@ -51,7 +50,7 @@ async function searchTasks(username, id){ //buscar tasks do user
         if(e.state == 'open'){
             const task = document.createElement('li')
             task.classList.add('task-li') //element li task
-            task.textContent = e.tasks
+            task.textContent = e.task
 
             taskOpen.appendChild(task) //add element list
             return

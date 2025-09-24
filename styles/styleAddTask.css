@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --cor-fundo: #121212;
+  --cor-container: #1A1A1A;
+  --cor-texto: #E0E0E0;
+  --cor-borda: #53ffb2af;
+  --cor-verde-hover: #00cc6a;
+  --cor-input-borda: #2A2A2A;
+  --cor-borda-suave: #1F1F1F;
+  --cor-link: #8f8f8f;
+  --cor-botao-texto: #121212;
+  --cor-alternative: #07a156;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.pop-up{
+    width: 40%;
+    max-height: 400px;
+    position: relative;
+    padding: 2%;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+/* Botão de sair (X) */
+.btn-exit {
+  position: absolute;
+  top: 5%;
+  right: 4%;
+  width: 5%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: rgba(255, 0, 0, 0.756);
+  border: none;
+  border-radius: 6px;
+  color: var(--cor-texto);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-exit:hover {
+  background-color: rgba(255, 0, 0, 0.947);
+  color: var(--cor-texto);
+}
+
+.btn-exit::before { 
+  content: '×';
+  font-size: 1.2em; 
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* label form */
+.form-infos {
+  background-color: transparent;
+  position: relative;
+  margin: 10% auto 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputValue {
+  width: 80%;
+  margin: 3% auto;
+  padding: 12px;
+  border: 1px solid var(--cor-link);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--cor-texto);
+  font-size: 0.9em;
+}
+
+.inputValue:focus {
+  border-color: #07a156;
+  outline: none;
+}
+
+.labelInput {
+  margin: 0 70% 0 0;
+  color: var(--cor-texto);
+}
+
+
+/* Ícone do calendário no input date (Chrome/Edge) */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(44%) sepia(74%) saturate(371%) hue-rotate(88deg) brightness(94%) contrast(90%);
+}
