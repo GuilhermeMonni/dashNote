@@ -1,5 +1,4 @@
 //card profile home 
-
 //exibir o nome do usuario no card 
 let nameCard = document.querySelector('#username-card') 
 let usernameCard = username

@@ -12,7 +12,7 @@ form.addEventListener('keyup', (e) => {
 async function execLogin(e){ //função para executar login
     e.preventDefault()
 
-    console.log("Verificando os dados inseridos...")
+    console.log("Verificando os dados inseridos.")
 
     const dados = new FormData(form) //dados do formulario
     const username = dados.get('username')

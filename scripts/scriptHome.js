@@ -30,13 +30,13 @@ async function searchTasks(username, id){ //buscar tasks do user
         })
     })
 
-    // Verifica a resposta
-    if (!response.ok) {
-        throw new Error(`Erro HTTP: ${response.status}`)
-    }
-
     const data = await response.json()
-    console.log(data.message) //msg boas vindas
+    console.log(data.message) //msg server
+
+    if(!data.task_userid){
+        console.log('Nenhuma tarefa disponível.')
+        return
+    }
 
     //organizar tasks recebidas
     const tasksArray = Array.from(data.tasksArray) //tasks user
