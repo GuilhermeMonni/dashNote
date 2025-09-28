@@ -9,12 +9,27 @@ fetch('https://dashnote.onrender.com/me', { //api para protecao de rota (mantem 
         Authorization: `Bearer ${token}`
     }
 })
-.then(res => { //validacao user
+.then(async res => { //validacao user
     if(!res.ok){
         window.location.href = './login.html'
     }
 
-    searchTasks(username, id)
+    try{
+        const tasksUser = await searchTasks(username, id)
+
+        if(tasksUser.length === 0){
+            return res.json({
+                sucess: true,
+                message: "Nenhuma tarefa disponivel.",
+                tasks: []
+            })
+        }
+    }catch(error){
+        return res.json({ 
+            success: false, 
+            message: "Erro interno do servidor." 
+        })
+    }
 })
 
 async function searchTasks(username, id){ //buscar tasks do user
@@ -30,13 +45,11 @@ async function searchTasks(username, id){ //buscar tasks do user
         })
     })
 
-    const data = await response.json()
-    console.log(data.message) //msg server
-
-    if(!data.task_userid){
-        console.log('Nenhuma tarefa disponível.')
-        return
+    if(!res.ok){
+        throw new Error('Erro na requisição.')
     }
+
+    const data = await response.json()
 
     //organizar tasks recebidas
     const tasksArray = Array.from(data.tasksArray) //tasks user

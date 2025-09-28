@@ -55,4 +55,3 @@ async function execLogin(e){ //função para executar login
         return
     }
 }
-
