@@ -7,7 +7,7 @@ const addTask = document.querySelector('#addTask')//btn addTask
     const { value: formValues } = await Swal.fire({
         title: "Adicionar tarefa",
         html: `
-            <button class="btn-exit"></button>
+            <button class="btn-exit" onclick="btnExit()"></button>
     
             <div class="form-infos">
                 <label for="inputTask" class="labelInput">Tarefa</label>
@@ -19,7 +19,7 @@ const addTask = document.querySelector('#addTask')//btn addTask
                 <input id="inputDate" type="date" class="inputValue">
             </div>
         `,
-        focusConfirm: false,
+        focusConfirm: true,
         customClass: {
             popup: 'pop-up',
             title: 'title'
@@ -27,14 +27,26 @@ const addTask = document.querySelector('#addTask')//btn addTask
         text: 'Sua tarefa foi adicionada com sucesso',
         confirmButtonColor: '#4CAF50', // botão confirmar
         preConfirm: () => {
-            return [
-            document.getElementById("swal-input1").value,
-            document.getElementById("swal-input2").value
-            ];
+            const inputValue = document.getElementById("inputTask").value
+            const inputDate = document.getElementById("inputDate").value
+            
+            if(!inputValue){
+                console.error('Insira uma tarefa!')
+            }
+            if(!inputDate){
+                console.error('Defina um prazo para a tarefa!')
+            }
+
+            return { inputValue, inputDate }
         }
         });
         if (formValues) {
         Swal.fire(JSON.stringify(formValues));
     }
 }//)
+
+//btn exit popup
+function btnExit(){
+    Swal.close()
+}
 
