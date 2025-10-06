@@ -1,9 +1,7 @@
 //adicionar task
 const addTask = document.querySelector('#addTask')//btn addTask
 
-// addTask.addEventListener(('click'), async 
-// () => {
-    async function loadPag(){
+addTask.addEventListener(('click'), async () => {
     await Swal.fire({
         title: "Adicionar tarefa",
         html: `
@@ -64,7 +62,7 @@ const addTask = document.querySelector('#addTask')//btn addTask
             console.error('Falha ao adicionar tarefa!', error)
         })
     }
-}//)
+})
 
 //btn exit popup
 function btnExit(){
