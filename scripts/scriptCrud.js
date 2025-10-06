@@ -43,23 +43,16 @@ const addTask = document.querySelector('#addTask')//btn addTask
     })
 
     async function sendTask(inputTask, inputDate){
-        const id = localStorage.getItem('id') //id user
-        const task = inputTask //task add
-        const taskDate = inputDate //date task
-        const taskState = 'open'
-
-        console.log(idTask)
-
         fetch('https://dashnote.onrender.com/addTask', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                id,
-                task,
-                taskDate,
-                taskState
+                task_userid: localStorage.getItem('id'), //id user
+                task_task: inputTask, //task user
+                task_date: inputDate, // date task
+                task_state: 'open' //state task
             })
         })
         .then(async (res) => {
