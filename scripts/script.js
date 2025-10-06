@@ -1,5 +1,4 @@
 const form = document.querySelector('#formContainer') //formulario
-let token
 
 //eventos para verificar login
 form.addEventListener('submit', execLogin)

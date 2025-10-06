@@ -4,7 +4,7 @@ const addTask = document.querySelector('#addTask')//btn addTask
 // addTask.addEventListener(('click'), async 
 // () => {
     async function loadPag(){
-    const { value: formValues } = await Swal.fire({
+    await Swal.fire({
         title: "Adicionar tarefa",
         html: `
             <button class="btn-exit" onclick="btnExit()"></button>
@@ -26,22 +26,50 @@ const addTask = document.querySelector('#addTask')//btn addTask
         },
         text: 'Sua tarefa foi adicionada com sucesso',
         confirmButtonColor: '#4CAF50', // botão confirmar
-        preConfirm: () => {
-            const inputValue = document.getElementById("inputTask").value
+        preConfirm: async () => {
+            const inputTask = document.getElementById("inputTask").value
             const inputDate = document.getElementById("inputDate").value
             
-            if(!inputValue){
+            if(!inputTask){
                 console.error('Insira uma tarefa!')
+                 //criar animação e regarregar pag
             }
             if(!inputDate){
                 console.error('Defina um prazo para a tarefa!')
             }
 
-            return { inputValue, inputDate }
+            return await sendTask(inputTask, inputDate)
         }
-        });
-        if (formValues) {
-        Swal.fire(JSON.stringify(formValues));
+    })
+
+    async function sendTask(inputTask, inputDate){
+        const id = localStorage.getItem('id') //id user
+        const task = inputTask //task add
+        const taskDate = inputDate //date task
+        const taskState = 'open'
+
+        console.log(idTask)
+
+        fetch('https://dashnote.onrender.com/addTask', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id,
+                task,
+                taskDate,
+                taskState
+            })
+        })
+        .then(async (res) => {
+            const data = await res.json()
+                
+            return console.log(data)
+        })
+        .catch(error => {
+            console.error('Falha ao adicionar tarefa!', error)
+        })
     }
 }//)
 
