@@ -1,7 +1,7 @@
 //card profile home 
 //exibir o nome do usuario no card 
 let nameCard = document.querySelector('#username-card') 
-let usernameCard = username
+let usernameCard = localStorage.getItem('username')
 
 usernameCard = usernameCard.charAt(0).toUpperCase() + usernameCard.slice(1)
 
