@@ -8,15 +8,21 @@ setTimeout(() => {
         let btnRemTask = document.createElement('btn')//btn remove task
         btnRemTask.innerHTML = '<i class="fi fi-sr-cross"></i>'
         btnRemTask.classList.add('btnRemTask')
+        
+        let btnEditTask = document.createElement('btn')//btn edit task
+        btnEditTask.innerHTML = '<i class="fi fi-sr-pencil"></i>'
+        btnEditTask.classList.add('btnEditTask')
 
         e.addEventListener('mouseover', () => {
-            e.appendChild(btnRemTask)
+            e.appendChild(btnRemTask) //btn remove task
+            e.appendChild(btnEditTask) //btn edit task
         })
         e.addEventListener('mouseout', () => {
-            e.removeChild(btnRemTask)
+            e.removeChild(btnRemTask) //btn remove task
+            e.removeChild(btnEditTask) //btn edit task
         })
     }) 
-}, 1000)
+}, 1500)
 
 //adicionar task
 const addTask = document.querySelector('#addTask')//btn addTask
