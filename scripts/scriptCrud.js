@@ -1,20 +1,25 @@
-//adicionar task
-const addTask = document.querySelector('#addTask')//btn addTask
+// add open task list 
+const ulOpen = document.querySelector('#task-open')//ul open
 
 setTimeout(() => {
-    const secOpen = document.querySelector('#sectionOpen')//section open
-    const liOpen = secOpen.querySelectorAll('.task-li')//list open
+    let liOpen = ulOpen.querySelectorAll('li')//list open
 
-    if(liOpen){
-        liOpen.forEach((e) => {
-            let btnRemTask = document.createElement('btn')
-            btnRemTask.textContent = 'x'
-            btnRemTask.style.cssText = 'background-color: red; width: 10%; height: 20vh;'
+    liOpen.forEach((e) => {
+        let btnRemTask = document.createElement('btn')//btn remove task
+        btnRemTask.innerHTML = '<i class="fi fi-sr-cross"></i>'
+        btnRemTask.classList.add('btnRemTask')
 
+        e.addEventListener('mouseover', () => {
             e.appendChild(btnRemTask)
         })
-    }
+        e.addEventListener('mouseout', () => {
+            e.removeChild(btnRemTask)
+        })
+    }) 
 }, 1000)
+
+//adicionar task
+const addTask = document.querySelector('#addTask')//btn addTask
 
 addTask.addEventListener(('click'), async () => {//add task
     await Swal.fire({

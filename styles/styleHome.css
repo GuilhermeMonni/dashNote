@@ -14,6 +14,8 @@
   --cor-link: #8f8f8f;
   --cor-botao-texto: #121212;
   --cor-alternative: #07a156;
+  --cor-btnEnv: #07a156;
+  --cor-btnCan: #c90a0a;
   --borda: 8px;
 }
 
@@ -44,7 +46,9 @@ header h1 {
   color: var(--cor-texto); 
   margin: 0 0 0.5rem 0;
 }
-.card-profile{
+
+/* card username */
+.card-profile{ 
   background-color: var(--cor-container);
   padding: 1%;
   width: 12%;
@@ -77,6 +81,14 @@ header h1 {
   font-weight: 400;
 }
 
+.fi-sr-user{ /* icon user */
+  width: 10%;
+  margin-right: 10%;
+  font-size: 1.3em;
+  color: var(--cor-link);
+}
+
+/* colums tasks */
 .kanban {
   display: flex;
   justify-content: center;
@@ -101,7 +113,8 @@ header h1 {
   animation: animation .5s ease-in-out;
 }
 
-#addTask{
+/* btn add task */
+#addTask{ 
   background-color: transparent;
   border: none;
   color: var(--cor-alternative);
@@ -133,17 +146,28 @@ header h1 {
 }
 
 .coluna li {
+  position: relative;
   background-color: var(--cor-container);
   color: var(--cor-texto);
   padding: 0.75rem;
   border-radius: var(--borda);
   box-shadow: 0 2px 8px -8px var(--cor-borda);
-  transition: transform 0.2s;
+  transition: transform 0.1s;
 }
 
 .coluna li:hover {
   transform: scale(1.02);
   cursor: pointer;
+}
+
+
+/* btn remove task */
+.btnRemTask{
+  position: absolute;
+  right: 2%;
+  color: var(--cor-btnCan);
+  font-size: 0.7em;
+  font-weight: 800;
 }
 
 footer{
@@ -179,12 +203,5 @@ footer img{
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.fi-sr-user{ /* icon user */
-  width: 10%;
-  margin-right: 10%;
-  font-size: 1.3em;
-  color: var(--cor-link);
 }
 
