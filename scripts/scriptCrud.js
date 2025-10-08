@@ -1,11 +1,26 @@
 //adicionar task
 const addTask = document.querySelector('#addTask')//btn addTask
 
-addTask.addEventListener(('click'), async () => {
+setTimeout(() => {
+    const secOpen = document.querySelector('#sectionOpen')//section open
+    const liOpen = secOpen.querySelectorAll('.task-li')//list open
+
+    if(liOpen){
+        liOpen.forEach((e) => {
+            let btnRemTask = document.createElement('btn')
+            btnRemTask.textContent = 'x'
+            btnRemTask.style.cssText = 'background-color: red; width: 10%; height: 20vh;'
+
+            e.appendChild(btnRemTask)
+        })
+    }
+}, 1000)
+
+addTask.addEventListener(('click'), async () => {//add task
     await Swal.fire({
         title: "Adicionar tarefa",
         html: `
-            <button class="btn-exit" onclick="btnExit()"></button>
+            <button class="btn-exit" onclick="btnExit()"><i class="fi fi-br-cross"></i></button>
     
             <div class="form-infos">
                 <label for="inputTask" class="labelInput">Tarefa</label>
@@ -18,12 +33,17 @@ addTask.addEventListener(('click'), async () => {
             </div>
         `,
         focusConfirm: true,
+        text: 'Sua tarefa foi adicionada com sucesso',
+        showCancelButton: true,
+        confirmButtonColor: '#4CAF50', // botão confirmar
+        confirmButtonText: 'Enviar',
+        cancelButtonText: 'Cancelar',
         customClass: {
             popup: 'pop-up',
-            title: 'title'
+            title: 'title',
+            confirmButton: 'btn-confirm',
+            cancelButton: 'btn-exit'
         },
-        text: 'Sua tarefa foi adicionada com sucesso',
-        confirmButtonColor: '#4CAF50', // botão confirmar
         preConfirm: async () => {
             const inputTask = document.getElementById("inputTask").value
             const inputDate = document.getElementById("inputDate").value
@@ -40,7 +60,7 @@ addTask.addEventListener(('click'), async () => {
         }
     })
 
-    async function sendTask(inputTask, inputDate){
+    async function sendTask(inputTask, inputDate){//envia task
         fetch('https://dashnote.onrender.com/addTask', {
             method: 'POST',
             headers: {
