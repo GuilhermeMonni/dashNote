@@ -5,9 +5,9 @@ setTimeout(() => {
     let liOpen = ulOpen.querySelectorAll('li')//list open
 
     liOpen.forEach((e) => {
-        let btnRemTask = document.createElement('btn')//btn remove task
-        btnRemTask.innerHTML = '<i class="fi fi-sr-cross"></i>'
+        let btnRemTask = document.createElement('button')
         btnRemTask.classList.add('btnRemTask')
+        btnRemTask.innerHTML = '<i class="fi fi-sr-cross"></i>'
         
         let btnEditTask = document.createElement('btn')//btn edit task
         btnEditTask.innerHTML = '<i class="fi fi-sr-pencil"></i>'
@@ -15,14 +15,17 @@ setTimeout(() => {
 
         e.addEventListener('mouseover', () => {
             e.appendChild(btnRemTask) //btn remove task
-            e.appendChild(btnEditTask) //btn edit task
+
+            btnRemTask.addEventListener('click', () => {
+                console.log(e)
+            })
         })
         e.addEventListener('mouseout', () => {
-            e.removeChild(btnRemTask) //btn remove task
-            e.removeChild(btnEditTask) //btn edit task
+           // e.removeChild(btnRemTask) //btn remove task
+          //  e.removeChild(btnEditTask) //btn edit task
         })
     }) 
-}, 1500)
+}, 1200)
 
 //adicionar task
 const addTask = document.querySelector('#addTask')//btn addTask

@@ -16,7 +16,9 @@
   --cor-alternative: #07a156;
   --cor-btnEnv: #07a156;
   --cor-btnCan: #c90a0a;
+  --cor-btnCanHover: #e30f0f;
   --cor-btnEdit: #ffcc00;
+  --cor-btnEditHover: #ffcc00;
   --borda: 8px;
 }
 
@@ -165,16 +167,28 @@ header h1 {
 /* btn remove task */
 .btnRemTask{
   position: absolute;
-  right: 2%;
+  top: 24%;
+  right: 3%;
+  background-color: transparent;
+  border: none;
+  width: 5%;
+  height: 3vh;
+  text-align: center;
+  cursor: pointer;
+}
+.btnRemTask i{
   color: var(--cor-btnCan);
-  font-size: 0.7em;
+  font-size: 0.8em;
   font-weight: 800;
+}
+.btnRemTask i:hover{
+  color: var(--cor-btnCanHover);
 }
 
 /* btn edit task */
 .btnEditTask{
   position: absolute;
-  right: 8%;
+  right: 20%;
   color: var(--cor-btnEdit);
   font-size: 0.7em;
   font-weight: 800;
