@@ -3,29 +3,39 @@ const ulOpen = document.querySelector('#task-open')//ul open
 
 setTimeout(() => {
     let liOpen = ulOpen.querySelectorAll('li')//list open
-
     liOpen.forEach((e) => {
-        let btnRemTask = document.createElement('button')
+        let btnRemTask = document.createElement('button') //btn delete task
         btnRemTask.classList.add('btnRemTask')
         btnRemTask.innerHTML = '<i class="fi fi-sr-cross"></i>'
-        
-        let btnEditTask = document.createElement('btn')//btn edit task
+        e.appendChild(btnRemTask) //btn remove task
+            
+        let btnEditTask = document.createElement('button')//btn edit task
+        btnEditTask.classList.add('btnEditTask') 
         btnEditTask.innerHTML = '<i class="fi fi-sr-pencil"></i>'
-        btnEditTask.classList.add('btnEditTask')
+        e.appendChild(btnEditTask) // btn edit task
 
-        e.addEventListener('mouseover', () => {
-            e.appendChild(btnRemTask) //btn remove task
+        //mouse events
+        e.addEventListener('mouseenter', () => {
+            btnRemTask.style.display = 'block'
+            btnEditTask.style.display = 'block'
+        })
+        
+        e.addEventListener('mouseleave', () => {
+            btnRemTask.style.display = 'none'
+            btnEditTask.style.display = 'none'
+        })
 
-            btnRemTask.addEventListener('click', () => {
-                console.log(e)
-            })
+        //events click
+        btnRemTask.addEventListener('click', () => {
+            console.log('excluir: ', e.textContent)
         })
-        e.addEventListener('mouseout', () => {
-           // e.removeChild(btnRemTask) //btn remove task
-          //  e.removeChild(btnEditTask) //btn edit task
+
+        btnEditTask.addEventListener('click', () => {
+            console.log('editar: ', e.textContent)
         })
+
     }) 
-}, 1200)
+}, 1100)
 
 //adicionar task
 const addTask = document.querySelector('#addTask')//btn addTask

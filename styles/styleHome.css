@@ -15,9 +15,9 @@
   --cor-botao-texto: #121212;
   --cor-alternative: #07a156;
   --cor-btnEnv: #07a156;
-  --cor-btnCan: #c90a0a;
-  --cor-btnCanHover: #e30f0f;
-  --cor-btnEdit: #ffcc00;
+  --cor-btnCan: #c90a0ac7;
+  --cor-btnCanHover: #f91616;
+  --cor-btnEdit: #ffcc00b3;
   --cor-btnEditHover: #ffcc00;
   --borda: 8px;
 }
@@ -175,6 +175,7 @@ header h1 {
   height: 3vh;
   text-align: center;
   cursor: pointer;
+  display: none;
 }
 .btnRemTask i{
   color: var(--cor-btnCan);
@@ -188,10 +189,23 @@ header h1 {
 /* btn edit task */
 .btnEditTask{
   position: absolute;
-  right: 20%;
+  top: 24%;
+  right: 10%;
+  background-color: transparent;
+  border: none;
+  width: 5%;
+  height: 3vh;
+  text-align: center;
+  cursor: pointer;
+  display: none;
+}
+.btnEditTask i{
   color: var(--cor-btnEdit);
-  font-size: 0.7em;
+  font-size: 0.8em;
   font-weight: 800;
+}
+.btnEditTask i:hover{
+  color: var(--cor-btnEditHover);
 }
 
 footer{
