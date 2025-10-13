@@ -26,8 +26,20 @@ setTimeout(() => {
         })
 
         //events click
-        btnRemTask.addEventListener('click', () => {
-            console.log('excluir: ', e.textContent)
+        btnRemTask.addEventListener('click', async () => {
+            const url = `https://dashnote.onrender.com/deleteTask/${e.id}`
+                try{
+                    const res = await fetch(url, {
+                        method: 'DELETE'
+                    })
+                    .then((res) => {
+                        console.log(`Tarefa ${e.id} deletada`) 
+
+                        return window.location.reload()
+                    })
+                } catch(err){
+                    console.error('Erro ao deletar tarefa!', err)
+                }
         })
 
         btnEditTask.addEventListener('click', () => {
@@ -99,8 +111,9 @@ addTask.addEventListener(('click'), async () => {//add task
         })
         .then(async (res) => {
             const data = await res.json()
-                
-            return console.log(data)
+            console.log(data)    
+
+            return window.location.reload()
         })
         .catch(error => {
             console.error('Falha ao adicionar tarefa!', error)

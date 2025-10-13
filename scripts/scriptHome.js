@@ -50,9 +50,9 @@ async function searchTasks(username, id) {
                 const task = document.createElement('li')
                 task.classList.add('task-li') //element li task
                 task.textContent = e.task_task
+                task.id = e.task_id //task id
 
                 taskOpen.appendChild(task) //add element list
-                return
             }
             //tasks em andamento
             if(e.task_state == 'working'){
