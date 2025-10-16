@@ -42,8 +42,22 @@ setTimeout(() => {
                 }
         })
 
-        btnEditTask.addEventListener('click', () => {
-            console.log('editar: ', e.textContent)
+        btnEditTask.addEventListener('click', async () => {
+            const url = 'https://dashnote.onrender.com/editTask'
+            try{ 
+                const res = await fetch(url, {
+                    method: 'POST', 
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        task_id: e.id,
+                        task_task: 'teste'
+                    })
+                })
+            }catch(err){
+                console.error('Erro ao editar tarefa', err)
+            }
         })
 
     }) 
